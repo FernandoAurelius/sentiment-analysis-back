@@ -19,7 +19,6 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 NLP_API_KEY = os.getenv("NLPCLOUD_API_KEY")
 REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
 REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
-REDIS_PASSWORD = os.getenv("REDIS_PASSWORD", "")
 REDIS_QUEUE_KEY = "sentiment_analysis_queue"
 REDIS_RESULTS_KEY = "sentiment_analysis_results:"
 
@@ -38,7 +37,6 @@ def get_redis_connection():
             redis_client = redis.Redis(
                 host=REDIS_HOST,
                 port=REDIS_PORT,
-                password=REDIS_PASSWORD,
                 decode_responses=True
             )
             redis_client.ping()  # Verificar conexão
