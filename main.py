@@ -47,6 +47,8 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization", "X-Requested-With"],
+    expose_headers=["Content-Type"],
+    max_age=86400  # Cache por 24 horas para reduzir preflight requests
 )
 
 logger.info(f"Middleware CORS configurado para origens: {origins}")
