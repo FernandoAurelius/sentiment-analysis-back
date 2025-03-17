@@ -43,7 +43,7 @@ def analyze_phrase(phrase: str):
     
     try:
         # Usa a API da NLP Cloud para fazer a análise de sentimentos na nuvem
-        analyst = Client("finetuned-llama-3-70b", token=NLP_API_KEY)
+        analyst = Client("finetuned-llama-3-70b", token=NLP_API_KEY, gpu=True)
         response = analyst.sentiment(phrase)
         
         logger.debug(f"Resposta bruta da API NLPCloud: {response}")
