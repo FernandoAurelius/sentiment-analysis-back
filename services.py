@@ -43,8 +43,7 @@ def analyze_phrase(phrase: str):
     
     try:
         # Usa a API da NLP Cloud para fazer a análise de sentimentos na nuvem
-        # Corrige o parâmetro: a biblioteca espera 'token' em vez de 'api_key'
-        analyst = Client("distilbert-base-uncased-finetuned-sst-2-english", token=NLP_API_KEY, lang="por_Latn")
+        analyst = Client("llama-3-1-405b", token=NLP_API_KEY, lang="por_Latn")
         response = analyst.sentiment(phrase)
         
         logger.debug(f"Resposta bruta da API NLPCloud: {response}")
