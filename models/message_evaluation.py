@@ -8,8 +8,9 @@ class MessageEvaluation:
     
     def __init__(self, message_text):
         self.message_text = message_text
-        self.label = analyze_phrase(message_text)[0]['label']
-        self.score = analyze_phrase(message_text)[0]['score']
+        evaluation = analyze_phrase(message_text)[0]
+        self.label = evaluation['label']
+        self.score = evaluation['score']
         
     def dict(self):
         return {
