@@ -135,6 +135,11 @@ def health_check():
 
 @app.post("/analyze")
 async def analyze_sentiment(message_list: list[Message]):
+    """
+    Recebe requisições de análise de sentimento do front-end 
+    Loga informações relacionadas ao processamento da requisição
+    Retorna o resultado da análise em formato de dicionário, que depois é convertido para JSON.
+    """
     start_time = time.time()
     logger.info(
         f"Nova requisição de análise recebida com {len(message_list)} mensagens"
