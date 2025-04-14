@@ -1,7 +1,6 @@
-import time
 import logging
 import os
-from services import process_pending_tasks
+import time
 
 # Configuração do sistema de logging
 log_directory = "logs"
@@ -19,11 +18,9 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
+# Este arquivo está desativado já que não usamos mais Redis para o processamento assíncrono.
+# Mantido para referência futura.
+
 if __name__ == "__main__":
-    logger.info("Iniciando worker para processamento de análises assíncronas")
-    try:
-        process_pending_tasks()
-    except KeyboardInterrupt:
-        logger.info("Worker interrompido pelo usuário")
-    except Exception as e:
-        logger.error(f"Erro fatal no worker: {str(e)}")
+    logger.info("Worker desativado - processamento assíncrono não está disponível sem Redis")
+    logger.info("Todas as operações agora são síncronas")
