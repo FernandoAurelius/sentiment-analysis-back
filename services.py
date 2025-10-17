@@ -103,7 +103,7 @@ def create_juice(message_text, prompt, cache_key=None):
             logger.debug(f"Fazendo requisição para API Gemini (tentativa {retry_count + 1}/{GEMINI_MAX_RETRIES + 1})")
             client = genai.Client(api_key=GEMINI_API_KEY)
             response = client.models.generate_content(
-                model="gemini-1.5-flash", 
+                model="gemini-2.5-flash", 
                 contents=f"{prompt}: {message_text}"
             )
             

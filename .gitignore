@@ -2,3 +2,6 @@
 __pycache__
 *.pyc
 nginx-config-example.conf
+logs/
+*.log
+.DS_Store
